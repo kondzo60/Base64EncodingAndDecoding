@@ -8,31 +8,31 @@ import java.io.IOException;
 
 import org.apache.commons.codec.binary.Base64;
 
-public class Test {
+public class Base64EncodingAndDecoding {
   
   public static void main(String[] args) {
     File file = new File("D:\\1.txt");
     
     try {
       /*
-       * Reading a Image file from file system
+       * Reading a file from file system
        */
       FileInputStream inFile = new FileInputStream(file);
       byte fileData[] = new byte[(int)file.length()];
       inFile.read(fileData);
       
       /*
-       * Converting Image byte array into Base64 String 
+       * Converting file byte array into Base64 String 
        */
       String fileDataString = encodeFile(fileData);
       
       /*
-       * Converting a Base64 String into Image byte array 
+       * Converting a Base64 String into file byte array 
        */
       byte[] fileByteArray = decodeFile(fileDataString);
       
       /*
-       * Write a image byte array into file system  
+       * Write a file byte array into file system  
        */
       FileOutputStream outFile = new FileOutputStream("D:\\2.txt");
       outFile.write(fileByteArray);
